@@ -13,10 +13,9 @@ def codemao(identity,password):
     data = json.loads(html)
     if ('error_category' in data):
         return({"code":"ERROR","message":"用户名或密码错误"})
-    else:
-        data = data['user_info']
-        del data['fullname']
-        del data['birthday']
-        return data
+    data = data['user_info']
+    del data['fullname']
+    del data['birthday']
+    return data
 
 
